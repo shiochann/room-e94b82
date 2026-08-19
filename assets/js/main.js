@@ -48,6 +48,42 @@
     targets.forEach((el) => io.observe(el));
   }
 
+  /* ---------- 画面写真 ----------
+     まだ用意していない画像は、枠ごと消して見せない。
+     壊れた画像アイコンが出るより、無いほうがきれいなため。 */
+  document.querySelectorAll(".shot img").forEach((img) => {
+    const hide = () => {
+      const fig = img.closest(".shot");
+      if (fig) fig.remove();
+    };
+    if (img.complete && img.naturalWidth === 0) hide();
+    img.addEventListener("error", hide);
+  });
+
+  /* ---------- 拡大表示 ---------- */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const big = lightbox.querySelector("img");
+
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".shot img");
+      if (!target) return;
+      big.src = target.src;
+      big.alt = target.alt;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+
+    const close = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+    };
+    lightbox.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+
   /* ---------- 年号 ---------- */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

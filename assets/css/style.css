@@ -244,6 +244,36 @@ a { color: inherit; }
 }
 .tip { border-left-color: var(--blue); }
 
+/* ---------- 画面写真 ----------
+   画像が用意できていない枠は main.js が丸ごと隠すので、
+   撮れたものから順に足していける。 */
+.shot { margin: 16px 0 0; }
+.shot img {
+  display: block; width: 100%; height: auto;
+  background: #fff;
+  border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(50, 50, 50, .08);
+  cursor: zoom-in;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.shot img:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(50, 50, 50, .13); }
+.shot figcaption {
+  margin-top: 8px; font-size: 12px; color: var(--ink-lt); letter-spacing: .06em;
+}
+
+/* 拡大表示 */
+.lightbox {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(50, 50, 50, .88);
+  display: none; place-items: center;
+  padding: 4vw; cursor: zoom-out;
+}
+.lightbox.is-open { display: grid; }
+.lightbox img {
+  max-width: 100%; max-height: 92vh;
+  border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+}
+
 /* ---------- Q&A ---------- */
 .qa { display: flex; flex-direction: column; gap: 10px; }
 .qa details {

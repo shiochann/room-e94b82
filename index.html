@@ -132,6 +132,7 @@
         <h3>Chromeの拡張機能ページを開く</h3>
         <p>アドレスバーに次を入力してEnter。</p>
         <p class="code">chrome://extensions</p>
+        <figure class="shot"><img src="assets/img/setup-1-extensions.png" alt="Chromeの拡張機能ページ" loading="lazy"><figcaption>拡張機能の管理ページ</figcaption></figure>
       </div>
     </li>
     <li class="step reveal">
@@ -139,6 +140,7 @@
       <div class="step__body">
         <h3>「デベロッパーモード」をONにする</h3>
         <p>画面の右上にあります。</p>
+        <figure class="shot"><img src="assets/img/setup-2-devmode.png" alt="デベロッパーモードのスイッチ" loading="lazy"><figcaption>右上のスイッチをONに</figcaption></figure>
       </div>
     </li>
     <li class="step reveal">
@@ -146,6 +148,7 @@
       <div class="step__body">
         <h3>フォルダを読み込む</h3>
         <p>左上の「パッケージ化されていない拡張機能を読み込む」をクリックし、解凍した <code>sns-post-collector</code> フォルダを選びます。</p>
+        <figure class="shot"><img src="assets/img/setup-3-load.png" alt="パッケージ化されていない拡張機能を読み込む" loading="lazy"><figcaption>左上のボタンから、解凍したフォルダを選ぶ</figcaption></figure>
       </div>
     </li>
     <li class="step reveal">
@@ -153,6 +156,7 @@
       <div class="step__body">
         <h3>アイコンをピン留めする</h3>
         <p>ツールバーのパズルピース🧩→「SNS投稿コレクター」の横のピン📌をクリック。<strong>これをやらないとアイコンが隠れたままです。</strong></p>
+        <figure class="shot"><img src="assets/img/setup-4-pin.png" alt="拡張機能をピン留めするメニュー" loading="lazy"><figcaption>ピンを押すとツールバーに固定される</figcaption></figure>
       </div>
     </li>
   </ol>
@@ -179,6 +183,7 @@
       <div class="step__body">
         <h3>アイコンを押してパネルを出す</h3>
         <p>画面の右上にパネルが出ます。上部に「対象: @〇〇」と表示されていればOK。</p>
+        <figure class="shot"><img src="assets/img/usage-2-panel.png" alt="Threads上に表示されたパネル" loading="lazy"><figcaption>Threadsの画面右上にパネルが出る</figcaption></figure>
       </div>
     </li>
     <li class="step reveal step--hl">
@@ -186,6 +191,7 @@
       <div class="step__body">
         <h3>まず「1件だけ試し取得」を押す<span class="badge">重要</span></h3>
         <p>表示された数字が、画面に見えている実際の数字と合っているか見比べてください。<strong>ここがズレていると、この先の分析がすべて無意味になります。</strong></p>
+        <figure class="shot"><img src="assets/img/usage-3-sample.png" alt="試し取得の結果" loading="lazy"><figcaption>いいね・返信・再投稿・本文が出る。実際の画面と見比べる</figcaption></figure>
       </div>
     </li>
     <li class="step reveal">
@@ -202,6 +208,7 @@
         <h3>分布を見てから絞り込む</h3>
         <p class="code">走査 84件（ツリー 52 / 単発 32）<br>中央値 8 ／ 上位20% 24 ／ 最大 48</p>
         <p>迷ったら既定の「中央値の2倍以上」。<strong>該当10〜15件</strong>が理想です。</p>
+        <figure class="shot"><img src="assets/img/usage-5-filter.png" alt="分布と絞り込みの画面" loading="lazy"><figcaption>分布を見てから閾値を決められる</figcaption></figure>
         <p class="tip"><strong>ピン留め投稿は他と同じ基準で比べないこと。</strong>表示期間が長いぶん数字が積み上がっているだけです。</p>
       </div>
     </li>
@@ -217,6 +224,7 @@
       <div class="step__body">
         <h3>分析プロンプトをAIに貼る</h3>
         <p>「分析プロンプトをコピー」→ ClaudeやChatGPTの新しいチャットに貼るだけ。<strong>ツールがAIを呼ぶわけではないので、API料金はかかりません。</strong></p>
+        <figure class="shot"><img src="assets/img/usage-7-ai.png" alt="AIが返してきた分析結果" loading="lazy"><figcaption>貼り付けるとこう返ってくる</figcaption></figure>
       </div>
     </li>
   </ol>
@@ -342,6 +350,11 @@
 </section>
 
 </main>
+
+<!-- 画像の拡大表示 -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <img src="" alt="">
+</div>
 
 <footer class="foot">
   <p class="foot__logo">SNS COLLECTOR</p>
