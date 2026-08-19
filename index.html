@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 購入者向けの配布ページなので、検索には出さない -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<title>SNS投稿コレクター｜ダウンロードと使い方</title>
+<meta name="description" content="Threadsの投稿を収集・分析するChrome拡張「SNS投稿コレクター」のダウンロードと使い方。">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
+<meta name="theme-color" content="#FBF4E4">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ローディング -->
+<div class="loader" id="loader">
+  <div class="loader__bar"><span id="loaderFill"></span></div>
+</div>
+
+<!-- 背景の飾り -->
+<div class="deco" aria-hidden="true">
+  <span class="blob blob--mint"></span>
+  <span class="blob blob--pink"></span>
+  <span class="blob blob--blue"></span>
+</div>
+
+<header class="head">
+  <a class="head__logo" href="./">COLLECTOR</a>
+  <nav class="head__nav">
+    <a href="#download">DOWNLOAD</a>
+    <a href="#setup">SETUP</a>
+    <a href="#usage">USAGE</a>
+    <a href="#help">HELP</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero__vertical">見て、集めて、<br>型にする。</p>
+
+  <div class="hero__body">
+    <p class="hero__label">CHROME EXTENSION</p>
+    <h1 class="hero__title">SNS投稿<br>コレクター</h1>
+    <p class="hero__lead">
+      Threadsの投稿をまとめて集めて、<br>
+      反応が良かったものだけを抜き出す道具です。<br>
+      ツリーは全文つなげて、AIに渡せる形にします。
+    </p>
+    <a class="btn" href="#download">
+      <span>ダウンロードへ</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M9 3v10M4.5 9.5L9 14l4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <p class="hero__note">ご購入ありがとうございます。<br class="sp">このページはいつでも見返せます。</p>
+  </div>
+</section>
+
+<!-- 01 DOWNLOAD -->
+<section class="sec" id="download">
+  <div class="sec__head reveal">
+    <span class="sec__num">01</span>
+    <h2 class="sec__title">DOWNLOAD</h2>
+    <p class="sec__jp">ダウンロード</p>
+  </div>
+
+  <div class="card card--dl reveal">
+    <div class="dl__info">
+      <p class="dl__name">SNS投稿コレクター</p>
+      <p class="dl__meta">
+        <span class="tag" id="verTag">ver 1.0.4</span>
+        <span class="tag tag--soft">約34KB</span>
+        <span class="tag tag--soft">Chrome専用</span>
+      </p>
+    </div>
+    <a class="btn btn--fill" id="dlBtn" href="download/sns-post-collector-1.0.4.zip" download>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M9 3v8M5 7.5L9 11.5 13 7.5M3.5 14.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>ZIPをダウンロード</span>
+    </a>
+  </div>
+
+  <div class="grid2 reveal">
+    <div class="card">
+      <h3 class="card__title">使えるもの</h3>
+      <ul class="list list--ok">
+        <li>パソコン（Windows / Mac）</li>
+        <li>Google Chrome</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="card__title">使えないもの</h3>
+      <ul class="list list--ng">
+        <li>スマートフォン・タブレット</li>
+        <li>Safari / Edge / Firefox</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="notice reveal">
+    ダウンロードしたZIPは<strong>解凍</strong>してください（ダブルクリックでOK）。<br>
+    出てきた <code>sns-post-collector</code> フォルダは<strong>消さない場所に置いてください</strong>。
+    Chromeはこのフォルダを参照し続けるので、捨てると拡張機能も動かなくなります。
+  </p>
+</section>
+
+<!-- 02 SETUP -->
+<section class="sec" id="setup">
+  <div class="sec__head reveal">
+    <span class="sec__num">02</span>
+    <h2 class="sec__title">SETUP</h2>
+    <p class="sec__jp">入れる（3分）</p>
+  </div>
+
+  <ol class="steps">
+    <li class="step reveal">
+      <span class="step__n">1</span>
+      <div class="step__body">
+        <h3>Chromeの拡張機能ページを開く</h3>
+        <p>アドレスバーに次を入力してEnter。</p>
+        <p class="code">chrome://extensions</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">2</span>
+      <div class="step__body">
+        <h3>「デベロッパーモード」をONにする</h3>
+        <p>画面の右上にあります。</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">3</span>
+      <div class="step__body">
+        <h3>フォルダを読み込む</h3>
+        <p>左上の「パッケージ化されていない拡張機能を読み込む」をクリックし、解凍した <code>sns-post-collector</code> フォルダを選びます。</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">4</span>
+      <div class="step__body">
+        <h3>アイコンをピン留めする</h3>
+        <p>ツールバーのパズルピース🧩→「SNS投稿コレクター」の横のピン📌をクリック。<strong>これをやらないとアイコンが隠れたままです。</strong></p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- 03 USAGE -->
+<section class="sec" id="usage">
+  <div class="sec__head reveal">
+    <span class="sec__num">03</span>
+    <h2 class="sec__title">USAGE</h2>
+    <p class="sec__jp">使う</p>
+  </div>
+
+  <ol class="steps">
+    <li class="step reveal">
+      <span class="step__n">1</span>
+      <div class="step__body">
+        <h3>Threadsでプロフィールを開く</h3>
+        <p>分析したい垢のページへ。<span class="code code--inline">threads.com/@アカウント名</span></p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">2</span>
+      <div class="step__body">
+        <h3>アイコンを押してパネルを出す</h3>
+        <p>画面の右上にパネルが出ます。上部に「対象: @〇〇」と表示されていればOK。</p>
+      </div>
+    </li>
+    <li class="step reveal step--hl">
+      <span class="step__n">3</span>
+      <div class="step__body">
+        <h3>まず「1件だけ試し取得」を押す<span class="badge">重要</span></h3>
+        <p>表示された数字が、画面に見えている実際の数字と合っているか見比べてください。<strong>ここがズレていると、この先の分析がすべて無意味になります。</strong></p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">4</span>
+      <div class="step__body">
+        <h3>走査する</h3>
+        <p>取得上限120・期間30〜90日・速度は標準のままで「走査を開始」。</p>
+        <p class="warn">自動でスクロールします。終わるまで触らないでください（2〜3分）。</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">5</span>
+      <div class="step__body">
+        <h3>分布を見てから絞り込む</h3>
+        <p class="code">走査 84件（ツリー 52 / 単発 32）<br>中央値 8 ／ 上位20% 24 ／ 最大 48</p>
+        <p>迷ったら既定の「中央値の2倍以上」。<strong>該当10〜15件</strong>が理想です。</p>
+        <p class="tip"><strong>ピン留め投稿は他と同じ基準で比べないこと。</strong>表示期間が長いぶん数字が積み上がっているだけです。</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">6</span>
+      <div class="step__body">
+        <h3>続きがある投稿の全文を取る</h3>
+        <p>「他N件を見る」で隠れたツリーのパートを自動で取りに行きます。背景でタブが開閉しますが、放置してください。</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__n">7</span>
+      <div class="step__body">
+        <h3>分析プロンプトをAIに貼る</h3>
+        <p>「分析プロンプトをコピー」→ ClaudeやChatGPTの新しいチャットに貼るだけ。<strong>ツールがAIを呼ぶわけではないので、API料金はかかりません。</strong></p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="card reveal">
+    <h3 class="card__title">返ってくるもの</h3>
+    <ul class="list list--dot">
+      <li>1行目の型の分類（何パターンあり、どれが最強か）</li>
+      <li>ツリー構成の型（パート1→2→3の役割の流れ）</li>
+      <li>どのパートで数字が落ちるか</li>
+      <li>返信を生む投稿の特徴</li>
+      <li>穴埋め式のテンプレート3つ</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 HELP -->
+<section class="sec" id="help">
+  <div class="sec__head reveal">
+    <span class="sec__num">04</span>
+    <h2 class="sec__title">HELP</h2>
+    <p class="sec__jp">困ったとき</p>
+  </div>
+
+  <div class="qa reveal">
+    <details>
+      <summary>アイコンを押しても何も起きない</summary>
+      <div class="qa__body">
+        <p>まず<strong>Threadsのページを開いているか</strong>確認してください。他のサイトでは反応しません。</p>
+        <p>Threadsを開いているのに反応しない場合は、ページをリロードしてからもう一度押してください。</p>
+        <p>それでも出ない場合は <span class="code code--inline">chrome://extensions</span> を開き、「SNS投稿コレクター」が有効（青）か、赤い「エラー」ボタンが出ていないか確認してください。</p>
+      </div>
+    </details>
+    <details>
+      <summary>「プロフィールページで開いてください」と出る</summary>
+      <div class="qa__body">
+        <p>投稿の詳細画面ではなく、<span class="code code--inline">threads.com/@アカウント名</span> を開いてください。</p>
+      </div>
+    </details>
+    <details>
+      <summary>走査中に画面を触ってしまった</summary>
+      <div class="qa__body">
+        <p>「停止」を押せば、そこまでの件数で分布は見られます。やり直す場合はもう一度「走査を開始」を押してください。</p>
+      </div>
+    </details>
+    <details>
+      <summary>取得できる件数が少ない</summary>
+      <div class="qa__body">
+        <p>期間の設定を「すべて」にして、取得上限を増やしてみてください。</p>
+        <p>それでも少ない場合、その垢の投稿自体が少ない可能性があります。Threadsはプロフィールを下まで読み込んでも、一定数までしか表示しないことがあります。</p>
+      </div>
+    </details>
+    <details>
+      <summary>数字が明らかにおかしい</summary>
+      <div class="qa__body">
+        <p>Threadsの画面構造が変わった可能性があります。お手数ですが、購入元のnoteのコメント欄までご連絡ください。修正版をこのページで配布します。</p>
+      </div>
+    </details>
+    <details>
+      <summary>「取得できなかった項目があります」と出た</summary>
+      <div class="qa__body">
+        <p>その項目での絞り込みは使わないでください。他の項目は通常どおり使えます。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 05 UPDATE -->
+<section class="sec" id="update">
+  <div class="sec__head reveal">
+    <span class="sec__num">05</span>
+    <h2 class="sec__title">UPDATE</h2>
+    <p class="sec__jp">更新のしかた</p>
+  </div>
+
+  <p class="notice reveal">
+    Threadsの仕様変更などで修正版を出した場合、<strong>このページのファイルを新しいものに差し替えます</strong>。
+    追加費用はかかりません。ときどき見に来てください。
+  </p>
+
+  <ol class="steps steps--tight">
+    <li class="step reveal"><span class="step__n">1</span><div class="step__body"><h3>このページから最新のZIPをダウンロードして解凍</h3></div></li>
+    <li class="step reveal"><span class="step__n">2</span><div class="step__body"><h3><span class="code code--inline">chrome://extensions</span> を開く</h3></div></li>
+    <li class="step reveal"><span class="step__n">3</span><div class="step__body"><h3>「SNS投稿コレクター」を削除する</h3><p>更新ボタン（↻）ではなく、いったん削除します。</p></div></li>
+    <li class="step reveal"><span class="step__n">4</span><div class="step__body"><h3>新しく解凍したフォルダを読み込む</h3></div></li>
+    <li class="step reveal"><span class="step__n">5</span><div class="step__body"><h3>もう一度ピン留めして、バージョン番号を確認</h3></div></li>
+  </ol>
+
+  <div class="grid2 reveal">
+    <div class="card">
+      <h3 class="card__title">なぜ削除してから入れ直すのか</h3>
+      <ul class="list list--dot">
+        <li>新しいZIPは<strong>別の場所に解凍される</strong>ため、更新ボタンでは古いフォルダを読み続けます</li>
+        <li>版によっては権限の構成が変わり、更新ボタンでは反映されないことがあります</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="card__title">更新履歴</h3>
+      <ul class="log">
+        <li><span>ver 1.0.4</span>公開</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 06 NOTE -->
+<section class="sec" id="rules">
+  <div class="sec__head reveal">
+    <span class="sec__num">06</span>
+    <h2 class="sec__title">NOTES</h2>
+    <p class="sec__jp">使用上の注意</p>
+  </div>
+
+  <div class="card reveal">
+    <ul class="list list--dot">
+      <li>個人の分析用途でお使いください。収集したデータの再配布・転売はしないでください。</li>
+      <li>収集は速度を落とす設計にしています。「速い」設定は多用しないでください。</li>
+      <li>Threadsの仕様や規約は変更される可能性があります。ご利用は自己責任でお願いします。</li>
+      <li>このツールは投稿の閲覧・分析を効率化するものです。投稿の自動化やアカウント操作は行いません。</li>
+      <li><strong>本ツールおよびこのページのURLの再配布・転売は禁止です。</strong></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__logo">SNS COLLECTOR</p>
+  <p class="foot__txt">ご不明な点は、購入元のnoteのコメント欄までお気軽にどうぞ。</p>
+  <p class="foot__copy">© <span id="year">2026</span> shio</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
