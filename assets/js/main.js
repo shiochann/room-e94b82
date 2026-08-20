@@ -84,6 +84,50 @@
     });
   }
 
+  /* ---------- コピーボタン ----------
+     data-copy を付けた .code だけにボタンを足す。
+     サンプル出力の枠にまで付くと、押す意味のないボタンが並んで迷わせるため。 */
+  document.querySelectorAll(".code[data-copy]").forEach((box) => {
+    const text = box.textContent.trim();
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copy";
+    btn.textContent = "コピー";
+    btn.setAttribute("aria-label", text + " をコピー");
+
+    let timer = null;
+    const flash = (label, cls) => {
+      btn.textContent = label;
+      btn.classList.add(cls);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        btn.textContent = "コピー";
+        btn.classList.remove("is-done", "is-fail");
+      }, 1800);
+    };
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        flash("コピーしました", "is-done");
+      } catch {
+        // 古い環境やhttp配信のときの保険
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        ta.remove();
+        flash(ok ? "コピーしました" : "コピーできません", ok ? "is-done" : "is-fail");
+      }
+    });
+
+    box.appendChild(btn);
+  });
+
   /* ---------- 年号 ---------- */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
