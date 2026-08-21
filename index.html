@@ -57,6 +57,7 @@
     <a href="#setup">SETUP</a>
     <a href="#usage">USAGE</a>
     <a href="#help">HELP</a>
+    <a href="#qa">Q&amp;A</a>
   </nav>
 </header>
 
@@ -367,6 +368,116 @@
       <li>このツールは投稿の閲覧・分析を効率化するものです。投稿の自動化やアカウント操作は行いません。</li>
       <li><strong>本ツールおよびこのページのURLの再配布・転売は禁止です。</strong></li>
     </ul>
+  </div>
+</section>
+
+<!-- 07 Q&A -->
+<section class="sec" id="qa">
+  <div class="sec__head reveal">
+    <span class="sec__num">07</span>
+    <h2 class="sec__title">Q&amp;A</h2>
+    <p class="sec__jp">みなさんからの質問</p>
+  </div>
+
+  <p class="notice reveal">
+    質問部屋に寄せられた質問を、こちらにまとめていきます。<br>
+    <strong>同じことで困っている人がいるはずなので、遠慮なく聞いてください。</strong>
+    いただいた質問は、答えと一緒にこのページに追加していきます。
+  </p>
+
+  <div class="qa reveal">
+
+    <details>
+      <summary>iPhoneやiPadでは使えますか？</summary>
+      <div class="qa__body">
+        <p><strong>使えません。パソコン（Windows / Mac）のGoogle Chrome専用です。</strong></p>
+        <p>iPhoneとiPadにはChromeの拡張機能という仕組み自体がないためです（iOSのChromeは中身がSafariで、拡張機能に対応していません）。Androidも同様です。</p>
+        <p>なお、書き出した分析プロンプトをAIアプリに貼って<strong>結果を読む部分はスマホでもできます</strong>。集める作業だけがパソコン必須です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Threadsにログインしていないと使えませんか？</summary>
+      <div class="qa__body">
+        <p><strong>ログインした状態で使ってください。</strong></p>
+        <p>ログアウトのままだと、Threadsが7件ほど表示したところでログイン画面を出し、それ以上スクロールできなくなります。ツールの制限ではなくThreads側の仕様です。</p>
+        <p>ログインするのは<strong>ご自身のアカウントで大丈夫です。</strong>分析したい相手のアカウントである必要はありません。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>自分以外のアカウントも分析できますか？</summary>
+      <div class="qa__body">
+        <p>できます。<strong>公開アカウントであれば、ブラウザで見えている情報をそのまま読み取ります。</strong></p>
+        <p>非公開アカウントや、自分がブロックされている相手は、そもそも画面に表示されないので取得できません。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>集めたデータは、どこかに送信されますか？</summary>
+      <div class="qa__body">
+        <p><strong>送信されません。すべてお使いのパソコンの中だけで完結します。</strong></p>
+        <p>このツールには外部と通信する機能が一切ありません。収集した内容が開発者や第三者に送られることはなく、集計も書き出しもブラウザの中で行われます。</p>
+        <p>アクセスできる範囲もThreadsのページだけに限定してあります（他のサイトでは動きません）。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>AIの利用料はかかりますか？</summary>
+      <div class="qa__body">
+        <p><strong>かかりません。</strong>このツールはAIを呼び出しません。</p>
+        <p>やっているのは「AIに貼り付ける文章を組み立てる」ところまでです。実際の分析は、ご自身のClaudeやChatGPTに貼って行うので、<strong>無料プランのままでも使えます。</strong>APIキーの登録も不要です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>何アカウントまで分析できますか？回数制限はありますか？</summary>
+      <div class="qa__body">
+        <p><strong>制限はありません。</strong>何アカウントでも、何回でも使えます。</p>
+        <p>ただし短時間に大量に走査すると、Threads側から一時的に表示を制限されることがあります。スクロール速度は「標準」のままでお使いください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>解凍したフォルダは消してもいいですか？</summary>
+      <div class="qa__body">
+        <p><strong>消さないでください。</strong>Chromeはこのフォルダを参照し続けています。</p>
+        <p>ゴミ箱に入れると拡張機能も動かなくなります。「書類」フォルダなど、うっかり消さない場所に置いてください。デスクトップに置いたままにして、整理のときに消してしまう例が多いので気をつけてください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>アカウントが凍結されたりしませんか？</summary>
+      <div class="qa__body">
+        <p>このツールがやっているのは、<strong>ご自身がブラウザで見られる範囲を、スクロールしながら読み取ること</strong>です。投稿・いいね・フォローなどの操作は一切行いません。</p>
+        <p>負荷をかけないよう、収集の速度はあらかじめ遅く設定してあります。「速い」設定の多用は避けてください。</p>
+        <p>とはいえ、Threadsの規約や仕様は変更される可能性があります。<strong>ご利用は自己責任でお願いします。</strong>心配な場合は、まずご自身のアカウントの分析から試してみてください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>複数のパソコンで使えますか？</summary>
+      <div class="qa__body">
+        <p>ご自身がお使いのパソコンであれば、台数の制限なくお使いいただけます。同じZIPを読み込むだけです。</p>
+        <p>ただし<strong>他の方への再配布・共有・転売は禁止です。</strong>このページのURLも同様です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>X（旧Twitter）にも対応しますか？</summary>
+      <div class="qa__body">
+        <p>現時点ではThreadsのみの対応です。</p>
+        <p>他のSNSを追加できる構造では作ってありますが、対応時期はお約束できません。対応した場合はこのページでお知らせします。</p>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="card reveal" style="margin-top:22px">
+    <h3 class="card__title">質問の送り先</h3>
+    <p style="font-size:14px;color:var(--ink-lt)">
+      〔ここに質問部屋のリンクや案内を入れてください〕
+    </p>
   </div>
 </section>
 
