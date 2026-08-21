@@ -147,6 +147,9 @@ a { color: inherit; }
 
 /* ---------- セクション ---------- */
 .sec { position: relative; z-index: 1; padding: 90px 6vw; max-width: 1000px; margin: 0 auto; }
+/* ヒーローが無い単体ページ用。固定ヘッダーに潜り込まないよう上を空ける */
+.sec--page { padding-top: 150px; }
+.sec--page .sec__num { font-size: 13px; }
 .sec__head { margin-bottom: 44px; }
 .sec__num {
   display: block; font-size: 12px; font-weight: 700;

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<title>Q&amp;A｜SNS投稿コレクター</title>
+<meta name="description" content="SNS投稿コレクターに寄せられた質問と答えをまとめています。">
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">
+<meta name="theme-color" content="#FBF4E4">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shiochann.github.io/room-e94b82/qa/">
+<meta property="og:site_name" content="SNS投稿コレクター">
+<meta property="og:title" content="Q&amp;A｜SNS投稿コレクター">
+<meta property="og:description" content="寄せられた質問と答えをまとめています。">
+<meta property="og:image" content="https://shiochann.github.io/room-e94b82/assets/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiochann.github.io/room-e94b82/assets/img/ogp.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader__bar"><span id="loaderFill"></span></div>
+</div>
+
+<div class="deco" aria-hidden="true">
+  <span class="blob blob--mint"></span>
+  <span class="blob blob--pink"></span>
+  <span class="blob blob--blue"></span>
+</div>
+
+<header class="head">
+  <a class="head__logo" href="../">COLLECTOR</a>
+  <nav class="head__nav">
+    <a href="../#download">DOWNLOAD</a>
+    <a href="../#setup">SETUP</a>
+    <a href="../#usage">USAGE</a>
+    <a href="../#help">HELP</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="sec sec--page">
+  <div class="sec__head">
+    <span class="sec__num">Q&amp;A</span>
+    <h2 class="sec__title">みなさんからの質問</h2>
+    <p class="sec__jp">質問部屋に寄せられた内容をまとめています</p>
+  </div>
+
+  <p class="notice">
+    <strong>同じことで困っている人がいるはずなので、遠慮なく聞いてください。</strong><br>
+    いただいた質問は、答えと一緒にこのページに追加していきます。
+  </p>
+
+  <div class="qa" style="margin-top:22px">
+
+    <details>
+      <summary>iPhoneやiPadでは使えますか？</summary>
+      <div class="qa__body">
+        <p><strong>使えません。パソコン（Windows / Mac）のGoogle Chrome専用です。</strong></p>
+        <p>iPhoneとiPadにはChromeの拡張機能という仕組み自体がないためです（iOSのChromeは中身がSafariで、拡張機能に対応していません）。Androidも同様です。</p>
+        <p>なお、書き出した分析プロンプトをAIアプリに貼って<strong>結果を読む部分はスマホでもできます</strong>。集める作業だけがパソコン必須です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Threadsにログインしていないと使えませんか？</summary>
+      <div class="qa__body">
+        <p><strong>ログインした状態で使ってください。</strong></p>
+        <p>ログアウトのままだと、Threadsが7件ほど表示したところでログイン画面を出し、それ以上スクロールできなくなります。ツールの制限ではなくThreads側の仕様です。</p>
+        <p>ログインするのは<strong>ご自身のアカウントで大丈夫です。</strong>分析したい相手のアカウントである必要はありません。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>自分以外のアカウントも分析できますか？</summary>
+      <div class="qa__body">
+        <p>できます。<strong>公開アカウントであれば、ブラウザで見えている情報をそのまま読み取ります。</strong></p>
+        <p>非公開アカウントや、自分がブロックされている相手は、そもそも画面に表示されないので取得できません。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>集めたデータは、どこかに送信されますか？</summary>
+      <div class="qa__body">
+        <p><strong>送信されません。すべてお使いのパソコンの中だけで完結します。</strong></p>
+        <p>このツールには外部と通信する機能が一切ありません。収集した内容が開発者や第三者に送られることはなく、集計も書き出しもブラウザの中で行われます。</p>
+        <p>アクセスできる範囲もThreadsのページだけに限定してあります（他のサイトでは動きません）。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>AIの利用料はかかりますか？</summary>
+      <div class="qa__body">
+        <p><strong>かかりません。</strong>このツールはAIを呼び出しません。</p>
+        <p>やっているのは「AIに貼り付ける文章を組み立てる」ところまでです。実際の分析は、ご自身のClaudeやChatGPTに貼って行うので、<strong>無料プランのままでも使えます。</strong>APIキーの登録も不要です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>何アカウントまで分析できますか？回数制限はありますか？</summary>
+      <div class="qa__body">
+        <p><strong>制限はありません。</strong>何アカウントでも、何回でも使えます。</p>
+        <p>ただし短時間に大量に走査すると、Threads側から一時的に表示を制限されることがあります。スクロール速度は「標準」のままでお使いください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>解凍したフォルダは消してもいいですか？</summary>
+      <div class="qa__body">
+        <p><strong>消さないでください。</strong>Chromeはこのフォルダを参照し続けています。</p>
+        <p>ゴミ箱に入れると拡張機能も動かなくなります。「書類」フォルダなど、うっかり消さない場所に置いてください。デスクトップに置いたままにして、整理のときに消してしまう例が多いので気をつけてください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>アカウントが凍結されたりしませんか？</summary>
+      <div class="qa__body">
+        <p>このツールがやっているのは、<strong>ご自身がブラウザで見られる範囲を、スクロールしながら読み取ること</strong>です。投稿・いいね・フォローなどの操作は一切行いません。</p>
+        <p>負荷をかけないよう、収集の速度はあらかじめ遅く設定してあります。「速い」設定の多用は避けてください。</p>
+        <p>とはいえ、Threadsの規約や仕様は変更される可能性があります。<strong>ご利用は自己責任でお願いします。</strong>心配な場合は、まずご自身のアカウントの分析から試してみてください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>複数のパソコンで使えますか？</summary>
+      <div class="qa__body">
+        <p>ご自身がお使いのパソコンであれば、台数の制限なくお使いいただけます。同じZIPを読み込むだけです。</p>
+        <p>ただし<strong>他の方への再配布・共有・転売は禁止です。</strong>このページのURLも同様です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>X（旧Twitter）にも対応しますか？</summary>
+      <div class="qa__body">
+        <p>現時点ではThreadsのみの対応です。</p>
+        <p>他のSNSを追加できる構造では作ってありますが、対応時期はお約束できません。対応した場合はこのページでお知らせします。</p>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="card" style="margin-top:22px">
+    <h3 class="card__title">質問の送り先</h3>
+    <p style="font-size:14px;color:var(--ink-lt)">
+      〔ここに質問部屋のリンクや案内を入れてください〕
+    </p>
+  </div>
+
+  <div style="margin-top:34px">
+    <a class="btn" href="../" style="opacity:1;animation:none">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>ダウンロードと使い方へ戻る</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__logo">SNS COLLECTOR</p>
+  <p class="foot__txt">ご不明な点は、購入元のnoteのコメント欄までお気軽にどうぞ。</p>
+  <p class="foot__copy">© <span id="year">2026</span> shio</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

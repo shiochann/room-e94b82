@@ -9,7 +9,8 @@ Chrome拡張「SNS投稿コレクター」を、**購入者に配布するため
 ## 構成
 
 ```
-index.html              1枚もの。文言を直すときはここ
+index.html              ダウンロード・導入・使い方
+qa/index.html           Q&A（質問部屋に来た内容を貯める単体ページ）
 assets/css/style.css    配色は #FBF4E4 地 + ミント/ピンク/ブルー
 assets/js/main.js       ローディングとスクロール表示（外部ライブラリなし）
 download/*.zip          配布する拡張本体
@@ -92,7 +93,10 @@ bash check-images.sh   # どれが未用意かを一覧する
 
 ## 質問が来たときの追加のしかた
 
-`07 Q&A` は質問部屋に来た内容を貯めていく場所。`index.html` の `id="qa"` の中に、この形をコピーして足すだけ。
+Q&Aは **`qa/index.html` という単体ページ** にしてある（`index.html` の `07 Q&A` からはリンクしているだけ）。
+質問が増えてもトップページが長くならないようにするため。
+
+追加するときは `qa/index.html` の `<div class="qa">` の中に、この形をコピーして足すだけ。
 
 ```html
 <details>
