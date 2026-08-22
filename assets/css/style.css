@@ -274,6 +274,7 @@ a { color: inherit; }
   font-size: 14px; color: var(--ink-lt); margin-top: 18px;
 }
 .notice strong, .step__body strong, .list strong { color: var(--ink); font-weight: 700; }
+.hint2 { font-size: 13px; color: var(--ink-lt); margin-top: 6px; }
 .warn, .tip {
   margin-top: 10px; font-size: 13px;
   border-left: 3px solid var(--pink); padding-left: 14px;
