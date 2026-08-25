@@ -68,6 +68,23 @@
   <div class="qa" style="margin-top:22px">
 
     <details>
+      <summary>拡張機能の一覧に「SNS投稿コレクター」が出てきません</summary>
+      <div class="qa__body">
+        <p><strong>まだ読み込みが終わっていないだけです。</strong>順番どおりで間違っていません。</p>
+        <p>この一覧は「すでに入っている拡張機能」が並ぶ場所なので、フォルダを読み込むまでは表示されません。以下を順に確認してください。</p>
+        <p><strong>1. ZIPを解凍しましたか？</strong><br>
+        ダウンロードしたZIPをダブルクリックすると <code>sns-post-collector</code> というフォルダができます。ZIPのままでは読み込めません。</p>
+        <p><strong>2. 「デベロッパーモード」はONになっていますか？</strong><br>
+        拡張機能ページの<strong>右上</strong>にあるスイッチです。<strong>ここをONにしないと、次に押すボタン自体が画面に出てきません。</strong>ここで止まっている方がとても多いです。</p>
+        <p><strong>3. 「パッケージ化されていない拡張機能を読み込む」を押しましたか？</strong><br>
+        デベロッパーモードをONにすると、画面の<strong>左上</strong>にこのボタンが現れます。</p>
+        <p><strong>4. 選ぶのは「フォルダ」です</strong><br>
+        ファイル選択の画面では、<code>sns-post-collector</code> という<strong>フォルダを選んだ状態で「開く」</strong>を押してください。フォルダの中に入って、中のファイルを選ぶ必要はありません。</p>
+        <p>ここまで進むと、一覧に「SNS投稿コレクター」が表示されます。</p>
+      </div>
+    </details>
+
+    <details>
       <summary>Threadsを開いても何も起きません。Service workerが「無効」と出ています</summary>
       <div class="qa__body">
         <p><strong>Service worker が「無効」と表示されているのは正常です。</strong>故障ではありません。</p>
