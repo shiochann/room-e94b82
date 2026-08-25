@@ -68,6 +68,20 @@
   <div class="qa" style="margin-top:22px">
 
     <details>
+      <summary>読み込もうとすると、ダウンロードしたファイルが表示されません</summary>
+      <div class="qa__body">
+        <p><strong>パソコンが古いからではありません。ZIPのままだと表示されない仕様です。</strong></p>
+        <p>「パッケージ化されていない拡張機能を読み込む」で開く画面は、<strong>フォルダだけを選ぶ画面</strong>です。ZIPファイルは選択対象にならないため、一覧から消えたように見えます。</p>
+        <p><strong>ZIPを「展開（解凍）」してください。</strong></p>
+        <p><strong>Windowsの方はここに注意してください。</strong>ZIPをダブルクリックすると中身が見えますが、<strong>これは中を覗いているだけで、展開されていません。</strong>この状態では読み込めません。</p>
+        <p>ZIPファイルを<strong>右クリック →「すべて展開」→「展開」</strong>と進んでください。これで <code>sns-post-collector</code> というフォルダができます。</p>
+        <p>Macの方はダブルクリックで展開されます。</p>
+        <p><strong>選ぶのは、そのフォルダ自体です。</strong>フォルダの中に入って何かを選ぶ必要はありません。<code>sns-post-collector</code> を1回クリックして選んだ状態で「フォルダーの選択」または「開く」を押してください。</p>
+        <p>もし選んでもエラーが出る場合は、フォルダの中に <code>manifest.json</code> があるか確認してください。無ければ、もう一段内側のフォルダが正しい場所です。</p>
+      </div>
+    </details>
+
+    <details>
       <summary>バズっている投稿だけを抜き出すことはできますか？</summary>
       <div class="qa__body">
         <p><strong>はい、それがこのツールの中心機能です。</strong></p>
