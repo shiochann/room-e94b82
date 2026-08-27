@@ -98,12 +98,12 @@
     <div class="dl__info">
       <p class="dl__name">SNS投稿コレクター</p>
       <p class="dl__meta">
-        <span class="tag" id="verTag">ver 1.0.7</span>
-        <span class="tag tag--soft">約37KB</span>
+        <span class="tag" id="verTag">ver 1.0.8</span>
+        <span class="tag tag--soft">約39KB</span>
         <span class="tag tag--soft">Chrome専用</span>
       </p>
     </div>
-    <a class="btn btn--fill" id="dlBtn" href="download/sns-post-collector-1.0.7.zip" download>
+    <a class="btn btn--fill" id="dlBtn" href="download/sns-post-collector-1.0.8.zip" download>
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
         <path d="M9 3v8M5 7.5L9 11.5 13 7.5M3.5 14.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -174,7 +174,7 @@
       <div class="step__body">
         <h3>フォルダを読み込む</h3>
         <p>左上の「パッケージ化されていない拡張機能を読み込む」をクリックし、<strong>解凍してできたフォルダ</strong>を選びます。</p>
-        <p class="hint2">Windowsで「すべて展開」すると <code>sns-post-collector-1.0.7</code> という名前のフォルダができます。それを<strong>1回クリックして選んだ状態</strong>で「フォルダーの選択」を押してください。中に入って何かを選ぶ必要はありません。</p>
+        <p class="hint2">Windowsで「すべて展開」すると <code>sns-post-collector-1.0.8</code> という名前のフォルダができます。それを<strong>1回クリックして選んだ状態</strong>で「フォルダーの選択」を押してください。中に入って何かを選ぶ必要はありません。</p>
         <p class="warn"><strong>「マニフェスト ファイルが見つからないか読み取れません」と出たら</strong><br>
         選んだフォルダの中に <code>manifest.json</code> があるか確認してください。無ければ、<strong>もう一段内側のフォルダ</strong>が正しい場所です（1.0.6以前はフォルダが二重になっていました）。</p>
         <figure class="shot"><img src="assets/img/setup-3-load.png" alt="パッケージ化されていない拡張機能を読み込む" loading="lazy"><figcaption>左上のボタンから、解凍したフォルダを選ぶ</figcaption></figure>
@@ -430,6 +430,7 @@
     <div class="card">
       <h3 class="card__title">更新履歴</h3>
       <ul class="log">
+        <li><span>ver 1.0.8</span>プロンプトが長すぎてAIに貼り付けきれない問題に対応（文字数の表示と、分けてコピーする機能を追加）。ウィンドウが狭くて本文が折りたたまれている場合に警告を出すように</li>
         <li><span>ver 1.0.7</span>Windowsで「マニフェストが見つかりません」と出る問題を修正（解凍時にフォルダが二重になっていました）。ツリー全文の取得中に、何件目を処理しているかが分かるように改善</li>
         <li><span>ver 1.0.6</span>ツリーの1本目が読み取れない不具合を修正（本文が「スレッド」になり、いいねが「?」になっていました）。試し取得が他の垢の投稿を拾う不具合、ツリー全文の取得が全件失敗する不具合、本文が取れなかった投稿を取り直せない問題もあわせて修正。書き出しの表示と説明書も改善</li>
         <li><span>ver 1.0.5</span>取得件数が少なくなる不具合を修正（古いピン留め投稿があると走査が早く終わっていました）</li>
