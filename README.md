@@ -13,7 +13,7 @@ index.html              ダウンロード・導入・使い方
 qa/index.html           Q&A（質問部屋に来た内容を貯める単体ページ）
 assets/css/style.css    配色は #FBF4E4 地 + ミント/ピンク/ブルー
 assets/js/main.js       ローディングとスクロール表示（外部ライブラリなし）
-download/*.zip          配布する拡張本体
+download/sns-post-collector.zip  配布する拡張本体（バージョンを含まない固定名）
 robots.txt              検索避け
 update.sh               バージョン差し替えスクリプト
 ```
@@ -50,7 +50,14 @@ cd ~/Projects/sns-collector-room
 bash update.sh 1.0.5
 ```
 
-`update.sh` がやること: 新ZIPのコピー / 古いZIPの削除 / ダウンロードリンク・バージョン表記・ファイルサイズの書き換え。
+`update.sh` がやること: 新ZIPのコピー / バージョン表記・ファイルサイズの書き換え / ZIPの中身の確認（直下に `manifest.json` があるか、`manifest.json` のバージョンが指定と一致しているか）。
+
+**配布ファイル名にバージョンを入れないこと。**
+以前 `sns-post-collector-1.0.8.zip` のようにバージョン付きで配布していたが、
+更新で旧ファイルが消えると、ページをキャッシュしているブラウザが消えたURLを叩いて
+「サイトでファイルを取得できませんでした」になる。固定名なら常に最新が落ちる。
+バージョンはページの表記と、ZIP内の `manifest.json` で分かる。
+そのため `update.sh` はダウンロードリンクを書き換えない。
 
 そのあと `index.html` の「更新履歴」に1行足して push する。
 

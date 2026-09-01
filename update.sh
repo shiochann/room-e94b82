@@ -25,20 +25,35 @@ if [ ! -f "$SRC" ]; then
   exit 1
 fi
 
-rm -f download/*.zip
-cp "$SRC" download/
+# 配布ファイル名はバージョンを含めない固定名にしている。
+# バージョン付きにすると、ページがブラウザにキャッシュされている人が
+# 消えた旧ファイルを叩いて「サイトでファイルを取得できませんでした」になるため。
+# バージョンはページの表記と、ZIP内の manifest.json で分かる。
+DEST="download/sns-post-collector.zip"
+cp "$SRC" "$DEST"
 
-SIZE_KB=$(( ($(stat -f%z "download/sns-post-collector-${VERSION}.zip") + 512) / 1024 ))
+SIZE_KB=$(( ($(stat -f%z "$DEST") + 512) / 1024 ))
 
-# ダウンロードリンク / バージョン表記 / サイズ を差し替え
+# ZIPの直下に manifest.json があるか確認する（1.0.6以前はフォルダが二重になっていた）
+if ! unzip -l "$DEST" | grep -qE ' manifest\.json$'; then
+  echo "⚠️  ZIPの直下に manifest.json がありません。" >&2
+  echo "    index.html の手順（フォルダをそのまま選ぶ）と食い違うので確認してください。" >&2
+fi
+
+# ZIP内のバージョンが指定と一致しているか確認する（manifest.jsonの上げ忘れ防止）
+ZIP_VER=$(unzip -p "$DEST" manifest.json | sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
+if [ "$ZIP_VER" != "$VERSION" ]; then
+  echo "⚠️  manifest.json のバージョンが ${ZIP_VER} です（指定は ${VERSION}）。" >&2
+  echo "    拡張側の manifest.json を上げ忘れていないか確認してください。" >&2
+fi
+
+# バージョン表記 / サイズ を差し替え（リンク先は固定名なので触らない）
 python3 - "$VERSION" "$SIZE_KB" <<'PY'
 import re, sys
 version, size = sys.argv[1], sys.argv[2]
 p = "index.html"
 html = open(p, encoding="utf-8").read()
 
-html = re.sub(r'href="download/sns-post-collector-[^"]+\.zip"',
-              f'href="download/sns-post-collector-{version}.zip"', html)
 html = re.sub(r'(<span class="tag" id="verTag">)ver [^<]+(</span>)',
               rf'\g<1>ver {version}\g<2>', html)
 html = re.sub(r'(<span class="tag tag--soft">)約\d+KB(</span>)',
